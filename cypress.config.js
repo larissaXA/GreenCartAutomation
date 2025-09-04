@@ -11,5 +11,16 @@ module.exports = defineConfig({
     viewportWidth: 1280,   // Largura da tela
     viewportHeight: 720,   // Altura da tela
     defaultCommandTimeout: 8000, // Tempo padrão para comandos
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/reports",
+      overwrite: false,
+      html: true,
+      json: false
+    },
+    video: true,              
+    screenshotsFolder: "cypress/screenshots", 
+    videosFolder: "cypress/videos",         
+    screenshotOnRunFailure: true  
   },
 });
