@@ -1,8 +1,13 @@
 describe("Test cases to validate successful login via UI", () => {
-    it("Verify that user can access the Login page", () => {
-        cy.visit("/")
-        cy.get("a").contains("Login").click()
+    before(() => {
+        cy.visit("/auth/login")
+    })
 
-        cy.url().should("eq", "http://127.0.0.1:8000/auth/login/")
+    it("Verify that it is possible to login with an existent account", () => {
+        cy.get("#email").type("test@gmail.com")
+        cy.get("#password").type("passwordTest")
+        cy.get('[type="submit"]').click()
+        
+        cy.url().should("eq", "http://127.0.0.1:8000/shop/")
     })
 })
