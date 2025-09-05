@@ -1,0 +1,9 @@
+{
+    "newItem": {
+        "name": "Item",
+        "description": "Description",
+        "price": 5,
+        "expiry": 3,
+        "discount": 3
+    }
+}

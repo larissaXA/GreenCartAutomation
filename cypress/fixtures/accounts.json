@@ -1,0 +1,10 @@
+{
+    "validAccount": {
+        "email": "test@gmail.com",
+        "password": "passwordTest"
+    },
+    "invalidAccount": {
+        "email": "t@gmail.com",
+        "password": "password"
+    }
+}

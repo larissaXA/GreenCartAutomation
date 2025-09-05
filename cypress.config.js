@@ -2,15 +2,23 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "http://127.0.0.1:8000",   // URL base dos testes
+    baseUrl: "http://127.0.0.1:8000", 
+    env: {
+      urls: {
+        myListings: "/shop/mylistings/",
+        login: "/auth/login/",
+        shop: "/shop/",
+        createProduct: "/shop/create_product/"
+      }
+    },
     specPattern: [
         "cypress/e2e/**/*.cy.js",
         "cypress/api/**/*.cy.js"
-    ], // Padrão dos arquivos de teste
-    supportFile: false, // Arquivo de suporte
-    viewportWidth: 1280,   // Largura da tela
-    viewportHeight: 720,   // Altura da tela
-    defaultCommandTimeout: 8000, // Tempo padrão para comandos
+    ], 
+    supportFile: 'cypress/support/e2e.js', 
+    viewportWidth: 1280,   
+    viewportHeight: 720,   
+    defaultCommandTimeout: 8000, 
     reporter: "mochawesome",
     reporterOptions: {
       reportDir: "cypress/reports",
