@@ -1,6 +1,5 @@
 describe("Tests to validate removing an item from the My Listings catalog", () => {
     beforeEach(() => {
-        cy.visit("/auth/login")
         cy.login("test@gmail.com","passwordTest")
     })
 

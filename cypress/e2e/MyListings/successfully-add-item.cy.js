@@ -3,30 +3,30 @@ import { SELECTORS } from '../../support/selectors.js'
 
 describe("Tests to validate adding an item succesfully", () => {
     beforeEach(() => {
-        cy.visit(Cypress.env("urls").login)
         cy.fixture("accounts").then((account) => {
             cy.login(account.validAccount.email,account.validAccount.password)
         })
+        cy.get("a").contains(TEXTS.buttons.myListings).click()
+        cy.url().should('eq', Cypress.config().baseUrl + Cypress.env("urls").myListings);
+        cy.get("button").contains(TEXTS.buttons.addProduct).click()
     })
 
     it("Verify that user can add a new product", () => {
-        cy.get("a").contains(TEXTS.buttons.myListings).click()
-        cy.get("button").contains(TEXTS.buttons.addProduct).first().click()
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
-                item.newItem.price,
-                item.newItem.expiry,
-                item.newItem.discount,
+                item.newItem1.name,
+                item.newItem1.description,
+                item.newItem1.price,
+                item.newItem1.expiry,
+                item.newItem1.discount,
             )
 
             cy.url().should("eq", Cypress.config().baseUrl + Cypress.env("urls").myListings)
-            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem.name)
-            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem.description)
-            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem.price)
-            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", `${item.newItem.expiry} days left`)
-            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem.discount)
+            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem1.name)
+            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem1.description)
+            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem1.price)
+            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", `${item.newItem1.expiry} days left`)
+            cy.get(SELECTORS.myListingsPage.productCard).last().should("contain", item.newItem1.discount)
         })
     })
 })

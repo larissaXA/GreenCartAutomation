@@ -2,10 +2,6 @@ import { TEXTS } from '../../support/texts.js'
 import { SELECTORS } from '../../support/selectors.js'
 
 describe("Test cases to validate successful login via UI", () => {
-    beforeEach(() => {
-        cy.visit(Cypress.env("urls").login)
-    })
-
     it("Verify that it is NOT possible to login with an unregistered account", () => {
         cy.fixture("accounts").then((account) => {
             cy.login(account.invalidAccount.email, account.invalidAccount.password)

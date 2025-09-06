@@ -8,7 +8,8 @@ module.exports = defineConfig({
         myListings: "/shop/mylistings/",
         login: "/auth/login/",
         shop: "/shop/",
-        createProduct: "/shop/create_product/"
+        createProduct: "/shop/create_product/",
+        cart: "/cart/"
       }
     },
     specPattern: [

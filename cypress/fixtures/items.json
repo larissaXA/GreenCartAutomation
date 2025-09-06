@@ -1,0 +1,23 @@
+{
+    "newItem1": {
+        "name": "Item 1",
+        "description": "Description 1",
+        "price": 50,
+        "expiry": 10,
+        "discount": 30
+    },
+    "newItem2": {
+        "name": "Item 2",
+        "description": "Description 2",
+        "price": 10,
+        "expiry": 1,
+        "discount": 4
+    },
+    "newItem3": {
+        "name": "Item 3",
+        "description": "Description 3",
+        "price": 100,
+        "expiry": 5,
+        "discount": 99
+    }
+}

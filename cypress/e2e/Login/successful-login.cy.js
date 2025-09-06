@@ -1,8 +1,4 @@
 describe("Test cases to validate successful login via UI", () => {
-    before(() => {
-        cy.visit(Cypress.env("urls").login)
-    })
-
     it("Verify that it is possible to login with an existent account", () => {
         cy.fixture("accounts").then((account) => {
             cy.login(account.validAccount.email, account.validAccount.password)

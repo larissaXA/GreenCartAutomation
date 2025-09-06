@@ -3,9 +3,6 @@ import { SELECTORS } from '../../support/selectors.js'
 
 describe("Tests to validate unsuccessful tries to add new item", () => {
     beforeEach(() => {
-        cy.visit(Cypress.config().baseUrl)
-        cy.get("a").contains(TEXTS.buttons.login).click()
-        cy.wait(1000)
         cy.fixture("accounts").then((account) => {
             cy.login(account.validAccount.email, account.validAccount.password)
         })
@@ -15,13 +12,13 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product without name", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
                 "",
-                item.newItem.description,
-                item.newItem.price,
-                item.newItem.expiry,
-                item.newItem.discount,
+                item.newItem1.description,
+                item.newItem1.price,
+                item.newItem1.expiry,
+                item.newItem1.discount,
             )
         })
 
@@ -33,13 +30,13 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product without description", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
+                item.newItem1.name,
                 "",
-                item.newItem.price,
-                item.newItem.expiry,
-                item.newItem.discount,
+                item.newItem1.price,
+                item.newItem1.expiry,
+                item.newItem1.discount,
             )
         })
 
@@ -51,13 +48,13 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product with price equals 0", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
+                item.newItem1.name,
+                item.newItem1.description,
                 "0",
-                item.newItem.expiry,
-                item.newItem.discount,
+                item.newItem1.expiry,
+                item.newItem1.discount,
             )
         })
 
@@ -66,13 +63,13 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product with price less than 0", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
+                item.newItem1.name,
+                item.newItem1.description,
                 -1,
-                item.newItem.expiry,
-                item.newItem.discount,
+                item.newItem1.expiry,
+                item.newItem1.discount,
             )
         })
 
@@ -81,12 +78,12 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product with discounted price less than 0", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
-                item.newItem.price,
-                item.newItem.expiry,
+                item.newItem1.name,
+                item.newItem1.description,
+                item.newItem1.price,
+                item.newItem1.expiry,
                 -1,
             )
         })
@@ -96,12 +93,12 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product with discounted price bigger than price", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
+                item.newItem1.name,
+                item.newItem1.description,
                 2,
-                item.newItem.expiry,
+                item.newItem1.expiry,
                 5,
             )
         })
@@ -111,13 +108,13 @@ describe("Tests to validate unsuccessful tries to add new item", () => {
     })
 
     it("Verify that user CANNOT add a product with an expiry date less than 0", () => {
-        cy.fixture("item").then((item) => {
+        cy.fixture("items").then((item) => {
             cy.addNewProduct(
-                item.newItem.name,
-                item.newItem.description,
-                item.newItem.price,
+                item.newItem1.name,
+                item.newItem1.description,
+                item.newItem1.price,
                 -1,
-                item.newItem.discount,
+                item.newItem1.discount,
             )
         })
 
