@@ -1,7 +1,7 @@
 # End-to-End QA Process - Green Cart Validation 
 ## Table of Contents
-* [Overview](##Overview)
-* [Project Description](##Project Description)
+* [Overview](#overview)
+* [Project Description](#project-description)
 
 ## Overview
 This repository contains the automation test suite for the GreenCart web application, a sample e-commerce platform for plants and groceries. The tests cover functional (UI and API) and non-functional aspects of the application, ensuring high quality, usability, and performance.
