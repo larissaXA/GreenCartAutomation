@@ -3,9 +3,7 @@ import { SELECTORS } from '../../support/selectors.js'
 
 describe("Tests to validate unsuccessful tries to add new item", () => {
     beforeEach(() => {
-        cy.fixture("accounts").then((account) => {
-            cy.login(account.validAccount.email, account.validAccount.password)
-        })
+        cy.validLogin()
         cy.get("a").contains(TEXTS.buttons.myListings).click()
         cy.url().should('eq', Cypress.config().baseUrl + Cypress.env("urls").myListings);
         cy.get("button").contains(TEXTS.buttons.addProduct).click()

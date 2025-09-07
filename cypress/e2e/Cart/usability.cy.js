@@ -3,13 +3,8 @@ import { TEXTS } from "../../support/texts.js"
 
 describe("Usability validations at Cart Page", () => {
   beforeEach(() => {
-    cy.fixture("accounts").then((account) => {
-        cy.login(
-            account.validAccount.email,
-            account.validAccount.password
-        )
-        cy.ensureCartHasItem()
-    })
+    cy.validLogin()
+    cy.ensureCartHasItem()
   })
 
   const viewports = [

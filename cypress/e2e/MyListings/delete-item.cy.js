@@ -3,9 +3,7 @@ import { TEXTS } from "../../support/texts.js"
 
 describe("Tests to validate removing an item from the My Listings catalog", () => {
     beforeEach(() => {
-        cy.fixture("accounts").then((account) => {
-            cy.login(account.validAccount.email,account.validAccount.password)
-        })
+        cy.validLogin()
     })
 
     it("Verify that user can delete an existing product", () => {

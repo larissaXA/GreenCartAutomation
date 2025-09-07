@@ -12,6 +12,15 @@ Cypress.Commands.add("login", (email, password) => {
   cy.get("[type=submit]").click()
 })
 
+Cypress.Commands.add("validLogin", () => {
+    cy.fixture("accounts").then((account) => {
+        cy.login(
+            account.validAccount.email,
+            account.validAccount.password
+        )
+    })
+})
+
 Cypress.Commands.add("addNewProduct", (name, description, price, expiry, discount) => {
     if(name != ""){
       cy.get(SELECTORS.myListingsPage.name).clear().type(name)
