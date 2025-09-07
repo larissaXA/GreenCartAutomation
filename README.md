@@ -100,7 +100,7 @@ cd GreenCartAutomation
 ```
 npm install
 ```
-5.**Open Cypress Test Runner**
+5. **Open Cypress Test Runner**
 ```
 npx cypress open
 ```
