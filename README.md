@@ -5,6 +5,7 @@
 * [Tools and Technologies](#tools-and-technologies)
 * [Prerequisites](#prerequisites)
 * [Running the GreenCart Application Locally](#running-the-greencart-application-locally)
+* [Running the Automation Tests](#running-the-automation-tests)
 
 ## Overview
 This repository contains the automation test suite for the GreenCart web application, a sample e-commerce platform for plants and groceries. The tests cover functional (UI and API) and non-functional aspects of the application, ensuring high quality, usability, and performance.
@@ -84,4 +85,6 @@ python manage.py runserver
 7. You'll probably see something like "Starting development server at http://127.0.0.1:8000/" at your Terminal. Open this link at your browser
 
 P.S.: After that, to run a second time, you just simply need to navigate to the project folder, activate the environment and run ```python manage.py runserver```
+
+## Running the Automation Tests
 
