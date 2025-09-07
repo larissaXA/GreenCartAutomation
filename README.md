@@ -90,7 +90,7 @@ P.S.: After that, to run a second time, you just simply need to navigate to the 
 1. **Open the Terminal application on your machine at some folder**
 2. **Clone the github project on this folder**
 ```
-https://github.com/larissaXA/GreenCartAutomation.git
+git clone https://github.com/larissaXA/GreenCartAutomation.git
 ```
 3. **Navigate to the project folder**
 ```
