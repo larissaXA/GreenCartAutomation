@@ -2,6 +2,9 @@
 ## Table of Contents
 * [Overview](#overview)
 * [Project Description](#project-description)
+* [Tools and Technologies](#tools-and-technologies)
+* [Prerequisites](#prerequisites)
+* [Running the GreenCart Application Locally](#running-the-greencart-application-locally)
 
 ## Overview
 This repository contains the automation test suite for the GreenCart web application, a sample e-commerce platform for plants and groceries. The tests cover functional (UI and API) and non-functional aspects of the application, ensuring high quality, usability, and performance.
@@ -23,9 +26,9 @@ The automation project is implemented using Cypress for end-to-end UI and Postma
 
 ## Prerequisites
 Before running the GreenCart application and automation tests, make sure you have installed:
-* Node.js and npm (v16 or later) [Download Node.js](https://www.nodejs.tech/pt-br/download)
-* Git [Download Git](https://git-scm.com/downloads)
-* Python [Download Python](https://www.python.org/downloads/)
+* Node.js and npm (v16 or later) ([Download Node.js](https://www.nodejs.tech/pt-br/download))
+* Git ([Download Git](https://git-scm.com/downloads))
+* Python ([Download Python](https://www.python.org/downloads/))
 * Web browser
 
 ## Running the GreenCart Application Locally
