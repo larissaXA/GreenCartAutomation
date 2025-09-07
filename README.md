@@ -87,4 +87,28 @@ python manage.py runserver
 P.S.: After that, to run a second time, you just simply need to navigate to the project folder, activate the environment and run ```python manage.py runserver```
 
 ## Running the Automation Tests
+1. **Open the Terminal application on your machine at some folder**
+2. **Clone the github project on this folder**
+```
+https://github.com/larissaXA/GreenCartAutomation.git
+```
+3. **Navigate to the project folder**
+```
+cd GreenCartAutomation
+```
+4. **Install dependencies**
+```
+npm install
+```
+5.**Open Cypress Test Runner**
+```
+npx cypress open
+```
+This will open the Cypress GUI, where you can select and run test suites.
+6. **Run all tests in CLI mode (headless) and generate Mochawesome reports**
+```
+npx cypress run --reporter mochawesome
+```
+7. **View the reports**
+Generated reports are located in the /cypress/reports folder. They include detailed logs, screenshots of failed tests and pass/fail summaries.
 
