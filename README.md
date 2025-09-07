@@ -105,6 +105,7 @@ npm install
 npx cypress open
 ```
 This will open the Cypress GUI, where you can select and run test suites.
+
 6. **Run all tests in CLI mode (headless) and generate Mochawesome reports**
 ```
 npx cypress run --reporter mochawesome
