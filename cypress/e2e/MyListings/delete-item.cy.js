@@ -1,15 +1,20 @@
+import { SELECTORS } from "../../support/selectors.js"
+import { TEXTS } from "../../support/texts.js"
+
 describe("Tests to validate removing an item from the My Listings catalog", () => {
     beforeEach(() => {
-        cy.login("test@gmail.com","passwordTest")
+        cy.fixture("accounts").then((account) => {
+            cy.login(account.validAccount.email,account.validAccount.password)
+        })
     })
 
     it("Verify that user can delete an existing product", () => {
-        cy.get("a").contains("My Listings").click()
-        cy.url().should('eq', 'http://127.0.0.1:8000/shop/mylistings/');
+        cy.get("a").contains(TEXTS.buttons.myListings).click()
+        cy.url().should('eq', Cypress.config().baseUrl + Cypress.env("urls").myListings);
 
         cy.document().then((doc) => {
-                const items = doc.querySelectorAll('.relative.mx-auto.my-6.w-full.max-w-xs.flex-col.overflow-hidden.rounded-lg.bg-white.shadow-md');
-                let quantityBeforeDeletion = items.length;
+                const items = doc.querySelectorAll(SELECTORS.myListingsPage.productCard)
+                let quantityBeforeDeletion = items.length
                 let quantityAfterDeletion = 0
 
                 if(items.length == 0){
@@ -21,7 +26,12 @@ describe("Tests to validate removing an item from the My Listings catalog", () =
                 cy.get('button').contains('Yes').click()
                 cy.get('#deleteModal').should("not.be.visible")
 
-                cy.wrap(quantityBeforeDeletion).should('equal', quantityAfterDeletion + 1)
+                cy.document().then((doc) => {
+                    const items = doc.querySelectorAll(SELECTORS.myListingsPage.productCard)
+                    quantityAfterDeletion = items.length
+
+                    cy.wrap(quantityBeforeDeletion).should('equal', quantityAfterDeletion + 1)
+                })
             }
         )
     })

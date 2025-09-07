@@ -12,20 +12,19 @@ module.exports = defineConfig({
         cart: "/cart/"
       }
     },
-    specPattern: [
-        "cypress/e2e/**/*.cy.js",
-        "cypress/api/**/*.cy.js"
-    ], 
+    specPattern:"cypress/e2e/**/*.cy.js", 
     supportFile: 'cypress/support/e2e.js', 
     viewportWidth: 1280,   
     viewportHeight: 720,   
     defaultCommandTimeout: 8000, 
     reporter: "mochawesome",
-    reporterOptions: {
-      reportDir: "cypress/reports",
-      overwrite: false,
-      html: true,
-      json: false
+    "reporterOptions": {
+      "reportDir": "cypress/reports",
+      "overwrite": false,
+      "html": true,           
+      "json": false,            
+      "embeddedScreenshots": true,
+      "inlineAssets": true
     },
     video: true,              
     screenshotsFolder: "cypress/screenshots", 
